@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>00957035-EX6-2</title>
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Merriweather','軟正黑體', serif;
+            box-sizing: border-box;
+        }
+
+
+        /* 版面及元素初步尺寸樣式設定 */
+        .wrap {
+          color: #000630;
+          width: 950px;
+          margin: 0 auto; 
+        }
+
+        .content { display: flex; }
+
+        .left {
+          flex: 3;
+          background-color: #dfebee;
+          padding: 0 10px 20px 50px;
+        }
+
+        .right {
+          flex: 7;
+          background-color: #f0f6f8;
+          padding: 40px 20px 20px 20px;
+        }
+
+        li {
+          list-style: none;
+        }
+
+        /* header裝修區 */
+        .header {
+          text-align: center;
+          background-image: url('Sea.jpg');
+          color: #000630;
+          background-size: cover;
+          background-position: center bottom;
+          padding: 60px 0;
+        }
+
+        .header h2 {
+          display: inline-block;
+          font-size: 18px;
+          font-weight: 400;
+          letter-spacing: 2px;
+          border: 1px solid white;
+          padding: 5px 20px;
+          position: relative;
+        }
+
+
+        .profilePic {
+          width: 180px;
+          height: 180px;
+          background-image: url('boy.jpg');
+          background-size: cover;
+          background-position: center;
+          border: 2px solid white;
+          margin: 40px auto;
+        }
+
+        .left table {
+          margin-bottom: 20px;
+          width: 90%;
+        }
+
+        .left th,td{
+          border-bottom: 1px solid white;
+          text-align: left;
+          line-height: 30px;
+        }
+
+        .left th {
+          letter-spacing: 2px;
+          font-weight: 900;
+          font-size: 14px;
+        }
+
+        .left td { font-size: 10px; }
+
+        .left tr td:nth-child(1) {
+          font-weight: 700;
+          width: 40%;
+        } 
+
+        .left .peferences tr td {
+          font-weight: 400;
+        }
+
+        .left .links td {
+          border: none;
+          padding-top: 5px;
+        }
+
+        .left .links td:nth-child(1) {
+            text-align: center;
+        }
+
+        .left .links td:nth-child(1) .fab {
+          color: white;
+          background-color: #3d3838;
+          padding: 5px;
+          border-radius: 50%;
+        }
+
+        .left .links td:nth-child(1) .fa-facebook-f {
+          padding: 5px 8px;
+        }
+
+        .left .links td:nth-child(1) .fa-linkedin-in {
+          padding: 5px 6px;
+        }
+
+        .profile,.work,.education,.software {
+          margin-bottom: 30px;
+        }
+
+        .right h2 {
+          letter-spacing: 2px;
+          font-size: 14px;
+          font-weight: 900;
+          border-bottom: 1px solid white;
+          padding-bottom: 5px;
+          margin-bottom: 10px;
+        }
+
+        .right p {
+          font-size: 10px;
+          line-height: 20px;
+        }
+
+        .work ul>li {
+          display: flex;
+          margin-top: 20px;
+        }
+
+        .work ul li span { /*長方形*/
+          display: inline-block;
+          height: 10px;
+          padding: 5px 10px;
+          font-size: 10px;
+          color: white;
+          background-color: #000630;
+          position: relative;
+        }
+
+        .work ul li span:after { /*菱形*/
+          content: "";
+          background-color: #000630;
+          display: inline-block;
+          position: absolute;
+          width: 15px;
+          height: 15px;
+          right: -10%;
+          transform: rotate(45deg) translateY(-25%);
+        }
+
+        .work ul li ul { /*縣*/
+          border-left: 1px solid #000630;
+          margin-left: 20px;
+          padding-left: 10px;
+          display: flex;
+          position: relative;
+        }
+
+        .work ul li ul:before { /*原點*/
+          content: "";
+          width: 10px;
+          height: 10px;
+          background-color: #000630;
+          border-radius: 50%;
+          position: absolute;
+          left: -2%;
+        }
+
+        .work ul li ul li {
+            flex-direction: column;
+            margin: 0;
+        }
+
+        .work ul li h2 {
+          border: none;
+          margin: 0;
+        }
+
+
+        .education ul li {
+          display: flex;
+          margin-top: 20px;
+        }
+
+        .education ul li span {
+          display: inline-block;
+          height: 10px;
+          padding: 5px 10px;
+          font-size: 10px;
+          color: white;
+          background-color: #000630;
+          position: relative;
+        }
+
+        .education ul li span:after {
+          content: "";
+          background-color: #000630;
+          display: inline-block;
+          position: absolute;
+          width: 15px;
+          height: 15px;
+          right: -10%;
+          transform: rotate(45deg) translateY(-25%);
+        }
+
+        .education ul li ul {
+          border-left: 1px solid #000630;
+          margin-left: 20px;
+          padding-left: 10px;
+          display: flex;
+          position: relative;
+        }
+
+        .education ul li ul:before {
+          content: "";
+          width: 10px;
+          height: 10px;
+          background-color: #000630;
+          border-radius: 50%;
+          position: absolute;
+          left: -3.5%;
+        }
+
+        .education ul li ul li {
+          flex-direction: column;
+           margin: 0;
+        }
+
+        .education ul li h2 {
+          border: none;
+          margin: 0;
+        }
+
+        /* footer裝修區 */
+        .footer {
+          background-color: #000630;
+          color: white;
+          height: 60px;
+          position: relative;
+          font-size: 10px;
+        }
+
+        .footer ul {
+          position: absolute;
+          top: 50%;
+          left: 25%;
+        }
+
+        .footer li, h4, p { display: inline-block; }
+
+        .footer p { opacity: 0.8; /*不透明度*/}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <h3 style="font-size: 13px; font-weight: 300; letter-spacing: 2px;">It's Xiao-Ming's resume</h3>
+            <h1 style="font-size: 25px; letter-spacing: 4px; padding: 20px 0px;">Xiao-Ming WANG</h1>
+            <h2>College Students</h2>
+        </div>
+      
+        <div class="content">
+            <div class="left">
+            <div class="profilePic"></div>
+            <div class="personal">
+                <table>
+                    <tr>
+                        <th>PERSONAL</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>Xiao-Ming WANG</td>
+                    </tr>
+                    <tr>
+                        <td>Birthday</td>
+                        <td>2001/03/27</td>
+                    </tr>
+                    <tr>
+                        <td>Relationship</td>
+                        <td>single</td>
+                    </tr>
+                    <tr>
+                        <td>Nationality</td>
+                        <td>Taiwanese</td>
+                    </tr>
+                    <tr>
+                        <td>Languages</td>
+                        <td>Chinese, English</td>
+                    </tr>
+                </table>
+            </div>
+      
+            <div class="contact">
+                <table>
+                    <ul>
+                        <tr>
+                            <th>CONTACT</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>Mobile</td>
+                            <td>09xx-xxx-xxx</td>
+                        </tr>
+                        <tr>
+                            <td>Home</td>
+                            <td>02-xxx-xxxx</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>00957035@email.ntou.edu.tw</td>
+                        </tr>
+                        <tr>
+                            <td>instagram</td>
+                            <td>Xiao_Ming_0327</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>基隆市中正區xx路xx號</td>
+                        </tr>
+                    </ul>
+                </table>
+            </div>
+      
+            <div class="peferences">
+                <table> 
+                    <tr> <th>PEFERENCES</th> </tr>
+                    <tr> <td>I like Coding!!!</td> </tr>
+                    <tr> <td>I like Eating!!!</td> </tr>
+                    <tr> <td>I like Sleeping!!!</td> </tr>
+                </table>
+            </div>
+        </div>
+      
+        <div class="right">
+            <div class="profile">
+                <h2>ABOUT ME</h2>
+                <p>
+                    Hi, Hi, I'm Xiao-Ming WANG, I'm a student in National Taiwan Ocean University. <br>
+                    I am studying in the Department of Information Engineering since 2020. <br>
+                    I like coding and eating. <br>
+                    My hobbit is playing volleyball!!! <br>
+                </p>
+            </div>
+              
+            <div class="work">
+                <h2>WORK</h2>
+                <ul>
+                    <li>
+                        <span>2018</span>
+                        <ul>
+                            <li>
+                                <h2>Waiter</h2>
+                                <p>
+                                  I'd been a waiter at hot pot restaurant for three mothes.
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>2021</span>
+                        <ul>
+                          <li>
+                              <h2>Clerk</h2>
+                              <p style="font-size: 10px; line-height: 20px;">
+                                I'd been a clerk at tea shop for one year.
+                              </p>
+                          </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+      
+            <div class="education">
+                <h2>EDUCATION</h2>
+                <ul>
+                    <li>
+                        <span>2016</span>
+                        <ul>
+                            <li>
+                                <h2>XX High School</h2>
+                                <p>Had graduated!!</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>2020</span>
+                        <ul>
+                            <li>
+                            <h2>NTOU</h2>
+                            <p>Haven't graduated QQ</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+      
+            <div class="software">
+                <h2>SKILL</h2>
+                <ul>
+                    <li style="display: inline-block; width: 49%; padding: 10px 0px;">
+                        HTML
+                        <div class="bar" style="width: 250px; height: 15px; background-color: #dfebee; margin-top: 5px;">
+                            <div class="p100" style=" width: 100%; height: 100%; background-color: #000630;"></div>
+                        </div>
+                    </li>
+                    <li style="display: inline-block; width: 49%; padding: 10px 0px;">
+                        CSS
+                        <div class="bar" style="width: 250px; height: 15px; background-color: #dfebee; margin-top: 5px;">
+                            <div class="p90" style=" width: 90%; height: 100%; background-color: #000630;"></div>
+                        </div>
+                    </li>
+                    <li style="display: inline-block; width: 49%; padding: 10px 0px;">
+                        JAVA SCRIPT
+                        <div class="bar" style="width: 250px; height: 15px; background-color: #dfebee; margin-top: 5px;">
+                            <div class="p70" style=" width: 70%; height: 100%; background-color: #000630;"></div>
+                        </div>
+                    </li>
+                    <li style="display: inline-block; width: 49%; padding: 10px 0px;">
+                        JAVA
+                        <div class="bar" style="width: 250px; height: 15px; background-color: #dfebee; margin-top: 5px;">
+                            <div class="p80" style=" width: 80%; height: 100%; background-color: #000630;"></div>
+                        </div>
+                    </li>
+                    <li style="display: inline-block; width: 49%; padding: 10px 0px;">
+                        C++
+                        <div class="bar" style="width: 250px; height: 15px; background-color: #dfebee; margin-top: 5px;">
+                            <div class="p90" style=" width: 90%; height: 100%; background-color: #000630;"></div>
+                        </div>
+                    </li>
+                    <li style="display: inline-block; width: 49%; padding: 10px 0px;">
+                        C
+                        <div class="bar" style="width: 250px; height: 15px; background-color: #dfebee; margin-top: 5px;">
+                            <div class="p90" style=" width: 90%; height: 100%; background-color: #000630;"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>  
+    </div>
+      
+    <div class="footer">
+        <ul>
+            <li>
+                <h4>Xiao-Ming WANG：</h4>
+                <p>Hi Hi Hi</p>
+            </li>
+            <li>
+                <h4>Phone：</h4>
+                <p>09xx-xxx-xxx</p>
+            </li>
+            <li>
+                <h4>Email：</h4>
+                <p>00957035@gmail.ntou.edu.tw</p>
+            </li>
+        </ul>
+    </div>
+        
+</body>
+</html>
